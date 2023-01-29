@@ -2,8 +2,8 @@
 mutable struct DiskoVector
     io::IOStream 
     byte_buffer::Vector{UInt8}
-    int_buffer::Base.ReinterpretArray{Int64, 1, UInt8, Vector{UInt8}, false}
-    type::T where T <: DataType
+    int_buffer::Base.ReinterpretArray{T, 1, UInt8, Vector{UInt8}, false} where T 
+    type::X where X <: DataType
     last_read_ints::Int
     last_index::Int
     arr_size::Int
@@ -48,7 +48,7 @@ function read_chunk!(d::DiskoVector)
     d.last_read_ints = copy(d.last_index)
     d.last_index += Int64(rb / sizeof(d.type))
     # Fill in the reinterpret array 
-    d.int_buffer = reinterpret(Int64, d.byte_buffer)
+    d.int_buffer = reinterpret(d.type, d.byte_buffer)
 end
 
 @inline function Base.getindex(d::DiskoVector, i::Int)
