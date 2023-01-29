@@ -75,6 +75,6 @@ function Base.sizeof(d::DiskoVector)
 end
 
 function Base.eltype(d::DiskoVector)
-    return Vector{Int64}
+    return Int64
 end
 
