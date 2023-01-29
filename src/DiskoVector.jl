@@ -72,4 +72,7 @@ function Base.sizeof(d::DiskoVector)
     return sizeof(d.byte_buffer) + 96
 end
 
+function Base.eltype(d::DiskoVector)
+    return d.type
+end
 
