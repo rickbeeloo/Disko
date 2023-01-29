@@ -22,3 +22,8 @@ for i in 1:length(d)
 end
 ```
 Here `100_000` is the buffer size, i.e. the number of bytes to read from the file. If you use `Int64` this then will cover `100_000 / 8  = 12_500` integers. 
+
+---
+
+#### TODO
+- Make type defs in struct more specific
