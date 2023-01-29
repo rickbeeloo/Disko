@@ -25,6 +25,7 @@ function diskVector(file::String, byte_buffer_size::Int, type::T) where T <:Data
     # Open the file handle 
     d.io = open(file, "r")
     d.type = type
+    d.last_index = 0
     # Calculate array size 
     d.arr_size = Int64(filesize(file) / sizeof(type))
     return d
