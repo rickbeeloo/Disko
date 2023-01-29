@@ -16,7 +16,7 @@ function test()
     gen_test_file()
     d = diskVector("test.bin", 16, Int64)
     for i in 1:length(d)
-        println(i)
+        println(d[i])
     end
 end
 
