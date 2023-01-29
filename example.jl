@@ -1,7 +1,7 @@
 
 include("src/DiskoVector.jl")
 
-
+using BenchmarkTools
 
 function gen_test_file() 
     h = open("test.bin", "w+")
@@ -21,4 +21,18 @@ function test()
     end
 end
 
-test()
+function disko_test()
+
+   @time begin
+        tot = 0
+        arr = Vector{UInt8}(undef, 100_000)
+        d = diskVector!("/home/codegodz/packages/DiskMergeSort/data/test1.bin", arr)
+        for i in 1:length(d)
+            tot += d[i]
+        end
+   end
+
+end
+
+
+disko_test()
