@@ -78,3 +78,6 @@ function Base.eltype(d::DiskoVector)
     return Int64
 end
 
+function Base.close(d::DiskoVector)
+    close(d.io)
+end
