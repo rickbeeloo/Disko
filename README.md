@@ -27,3 +27,4 @@ Here `100_000` is the buffer size, i.e. the number of bytes to read from the fil
 
 #### TODO
 - Make type defs in struct more specific
+- Make types dynamic, so we can add `UInt32`, etc.

@@ -35,4 +35,12 @@ function disko_test()
 end
 
 
-disko_test()
+#disko_test()
+
+
+function test(type::T) where T <: DataType
+    x = zeros(type, 10)
+    println(x)
+end
+
+test(UInt32)
