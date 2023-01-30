@@ -6,7 +6,7 @@ Sometimes, like for mergesort, we want to access integers from multiple files at
 ---
 
 #### How it's done 
-It's quite simple using `readbytes!` and `reinterpret`:
+It's quite simple using `readbytes!` and `unsafe_copy`:
 - Read bytes (`UInt8`) into a buffer array
 - use `unsafe_copy` to directly move the `UInt8` bytes to an `Int64`
 - Keep loading chunks and updating the pointers when indexes are requested 
