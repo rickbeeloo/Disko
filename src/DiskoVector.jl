@@ -1,4 +1,3 @@
-
 mutable struct DiskoVector
     io::IOStream 
     byte_buffer::Vector{UInt8}
@@ -20,7 +19,7 @@ function diskVector(file::String, byte_buffer_size::Int)
     d = DiskoVector()
     _base_checks(file, byte_buffer_size)
     # Allocate the buffer vector
-    d.byte_buffer = zeros(UInt8, byte_buffer_size) #Vector{UInt8}(undef, byte_buffer_size)
+    d.byte_buffer = zeros(UInt8, byte_buffer_size)
     # Open the file handle 
     d.io = open(file, "r")
     d.last_index = 0
