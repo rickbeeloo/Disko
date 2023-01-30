@@ -22,7 +22,7 @@ function test()
 end
 
 function disko_test()
-   #gen_test_file()
+   gen_test_file()
    @btime begin
         tot = 0
         d = diskVector("test.bin", 100_000)
@@ -30,7 +30,7 @@ function disko_test()
             tot += d[i]
         end
    end
-
 end
 
-gen_test_file() 
+disko_test()
+   #gen_test_file()
