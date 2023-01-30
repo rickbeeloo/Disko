@@ -8,7 +8,7 @@ Sometimes, like for mergesort, we want to access integers from multiple files at
 #### How it's done 
 It's quite simple using `readbytes!` and `reinterpret`:
 - Read bytes (`UInt8`) into a buffer array
-- use `reinterpret` to "pretend" that this array is actually `Int64`
+- use `unsafe_copy` to directly move the `UInt8` bytes to an `Int64`
 - Keep loading chunks and updating the pointers when indexes are requested 
 - **Note**, this violates O(1) for `getindex()` as it may have to read bytes before returning results
 
