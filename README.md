@@ -3,6 +3,8 @@
 
 Sometimes, like for mergesort, we want to access integers from multiple files at the same time. While `mmap` is ideal for this it will cause[ major page faults](https://scoutapm.com/blog/understanding-page-faults-and-memory-swap-in-outs-when-should-you-worry " major page faults") - significantly affecting performance. To tackle this we can read parts of arrays from files, and when indexes beyond the buffer size are required we read the next bytes to the buffer. This is maximum around ~2x slower than directly filling a big buffer using `readbytes!`
 
+`add https://github.com/rickbeeloo/Disko`
+
 ---
 
 #### How it's done 
